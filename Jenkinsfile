@@ -40,5 +40,19 @@ pipeline {
             }
         }
 
+        stage('Release') {
+            steps {
+                echo 'Application release completed successfully'
+                sh 'docker images'
+            }
+        }
+
+        stage('Monitoring') {
+            steps {
+                echo 'Monitoring deployed containers and services'
+                sh 'docker ps'
+            }
+        }
+
     }
 }
